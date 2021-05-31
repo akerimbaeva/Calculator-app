@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <title>Calculator</title>
+</head>
+<body id="app">
+    <h1>{{ title }}</h1>
+    <div class="calculator">
+        <input type="text"
+            v-bind:placeholder ="placeholder" 
+            v-bind:value="inputValue" 
+            v-on:input="inputHandler"
+            v-on:keypress="keyPress" 
+            />
+        <hr>
+        <div class="calc_buttons">
+            <div class="btn_numbers">
+                <button class="num" v-on:click="getBtnValue(7)">7</button>
+                <button class="num" v-on:click="getBtnValue(8)">8</button>   
+                <button class="num" v-on:click="getBtnValue(9)">9</button><br>   
+                <button class="num" v-on:click="getBtnValue(5)">5</button>   
+                <button class="num" v-on:click="getBtnValue(6)">6</button>
+                <button class="num" v-on:click="getBtnValue(7)">7</button><br>
+                <button class="num" v-on:click="getBtnValue(1)">1</button>   
+                <button class="num" v-on:click="getBtnValue(2)">2</button>   
+                <button class="num" v-on:click="getBtnValue(3)">3</button><br>  
+                <button class="num" v-on:click="getBtnValue(0)">0</button>   
+                <button class="num" v-on:click="getDoubleZero()">00</button>  
+                <button class="num" v-on:click="getDot()">.</button>
+            </div> 
+            <div class="btn_operators">
+                <div class="btn_operators_line1">
+                    <button class="operand" v-on:click="sumOperation()">+</button><br>
+                    <button class="operand" v-on:click="minusOperation()">-</button><br>
+                    <button class="operand" v-on:click="multiplyOperation()">*</button><br>
+                    <button class="operand" v-on:click="divideOperation()">/</button><br>
+                </div>
+                <div class="btn_operators_line2">
+                    <button class="operand" v-on:click="sqrtOperation()">sqrt</button><br>
+                    <button class="operand" v-on:click="persentOperation()">%</button><br>
+                    <button class="operand" id="btn_equal" v-on:click="equalOperation()">=</button><br>
+                    <button class="operand" id="btn_clear" v-on:click="clear()" >c</button><br>
+                </div>
+            </div> 
+        </div>    
+    </div>
+
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="script.js"></script> 
+</body>
+</html>
